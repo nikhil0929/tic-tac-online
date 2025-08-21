@@ -1,7 +1,7 @@
 from fastapi import Depends, FastAPI
 from db import Session, db
 from models.user import User
-from routes.auth.controller import router as auth_router
+from routes.user.controller import router as user_router
 import logging
 
 logging.basicConfig(level=logging.INFO,
@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
-app.include_router(auth_router)
+app.include_router(user_router)
 
 
 @app.get("/")

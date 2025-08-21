@@ -1,14 +1,14 @@
 import logging
 from fastapi import APIRouter, Depends
-from routes.auth import services
-from routes.auth.schemas import Test1Request
+from routes.user import services
+from routes.user.schemas import Test1Request
 
 logger = logging.getLogger(__name__)
 
 
 router = APIRouter(
-    prefix="/test",
-    tags=["test"],
+    prefix="/user",
+    tags=["user"],
 )
 
 
