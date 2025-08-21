@@ -1,0 +1,5 @@
+credentials*
+token*
+.env
+# any pycache
+__pycache__
