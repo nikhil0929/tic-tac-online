@@ -1,28 +1,74 @@
-1. Start environment:
+# Start the application
+
+1. Clone the repository
 
    ```
-   conda activate checkr-api
+   git clone https://github.com/nikhil0929/tic-tac-online.git
    ```
 
-2. Start new Database:
+2. Navigate to the project directory:
 
    ```
-   docker run -d --name checkr_db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=checkr_db -p 9876:5432 postgres:latest
+   cd tic-tac-online
    ```
 
-3. Connect to it on Postico:
+3. Create and activate the environment:
 
    ```
-   postgres://postgres:postgres@localhost:9876/checkr_db
+   conda create -n tic-tac-online python=3.10
+   conda activate tic-tac-online
+   pip install -r requirements.txt
    ```
 
-4. Create new alembic revision (autogenerate)
+4. Start new Database:
 
    ```
-   alembic revision --autogenerate -m "Add user account table"
+   docker run -d --name tic-tac-online -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=tic_tac_online -p 8766:5432 postgres:latest
    ```
 
-5. Run the migration
+5. Install and start Redis (macOS):
+
    ```
+   brew install redis
+   brew services start redis
+   ```
+
+6. (Optional) Connect to it on Postico (or any other PostgreSQL client) so you can see the database:
+
+   ```
+   postgres://postgres:postgres@localhost:8766/tic_tac_online
+   ```
+
+7. Create new alembic revision (autogenerate)
+
+   ```
+   alembic revision --autogenerate -m "Add all tables"
    alembic upgrade head
+   ```
+
+   This will create the tables in the database.
+
+8. Run the application
+
+   ```
+   uvicorn server:app --reload
+   ```
+
+   This will start the backend application on http://localhost:8000
+
+9. (Optional) Run the frontend application
+
+```
+cd frontend
+npm install
+npm run dev
+```
+
+This will start the frontend application on http://localhost:3000
+
+# Run the simulation
+
+1. Run the simulation
+   ```
+   python simulation/simulation.py
    ```
