@@ -1,3 +1,7 @@
+# Tic-Tac-Toe Online
+
+A simple Tic-Tac-Toe game built with FastAPI and React (not really needed but its there)
+
 # Start the application
 
 1. Clone the repository

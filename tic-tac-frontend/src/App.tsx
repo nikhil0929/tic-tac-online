@@ -25,6 +25,7 @@ function App() {
 		localStorage.setItem('token', token);
 		localStorage.setItem('userID', userID.toString());
 		setIsAuthenticated(true);
+		setUserID(userID);
 	};
 
 	const handleRegister = (token: string, userID: number) => {
@@ -32,6 +33,7 @@ function App() {
 		localStorage.setItem('token', token);
 		localStorage.setItem('userID', userID.toString());
 		setIsAuthenticated(true);
+		setUserID(userID);
 	};
 
 	console.log('✅ User ID isss: ', userID);
