@@ -2,6 +2,9 @@
 
 A simple Tic-Tac-Toe game built with FastAPI and React (not really needed but its there)
 
+<img width="970" height="991" alt="image" src="https://github.com/user-attachments/assets/d7f369c9-e484-4bd5-9ace-e49aa912e948" />
+
+
 # Start the application
 
 1. Clone the repository
