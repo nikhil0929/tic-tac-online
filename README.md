@@ -4,7 +4,6 @@ A simple Tic-Tac-Toe game built with FastAPI and React (not really needed but it
 
 <img width="970" height="991" alt="image" src="https://github.com/user-attachments/assets/d7f369c9-e484-4bd5-9ace-e49aa912e948" />
 
-
 # Start the application
 
 1. Clone the repository
@@ -72,6 +71,14 @@ npm run dev
 ```
 
 This will start the frontend application on http://localhost:3000
+
+# Run the tests
+
+```
+pytest tests/
+```
+
+This will run the tests and generate a coverage report.
 
 # Run the simulation
 
