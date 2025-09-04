@@ -222,10 +222,10 @@ def create_websocket_token(user: User, redis_client: redis.Redis):
 
 def get_current_user_from_websocket_token(token: str, session: Session, redis_client: redis.Redis):
     data = redis_client.get(f"ws_token:{token}")
-    data = json.loads(data)
     if not data:
         print(f"No data found for token: {token}")
         raise ValueError("Invalid token")
+    data = json.loads(data)
 
     user_id = data["user_id"]
     user = session.query(User).filter(User.id == user_id).first()
