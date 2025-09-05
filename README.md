@@ -84,5 +84,5 @@ This will run the tests and generate a coverage report.
 
 1. Run the simulation
    ```
-   python simulation/simulation.py
+   python simulation/run_simulation.py
    ```
